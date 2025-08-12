@@ -1,0 +1,38 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+
+# Virtual environment folders
+venv/
+env/
+.venv/
+ENV/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# SQLite database (if you have one and don't want to push it)
+*.sqlite3
+instance/
+
+# Flask specific
+*.db
+*.sqlite
+*.pyc
+
+# Backup files
+*.bak
+*.swp

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Adoption Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #a18cd1, #fbc2eb);
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1rem;
+        }
+        button {
+            background-color: hotpink;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🐾 Find Your Perfect Pet 🐾</h1>
+    <form action="/browse" method="get">
+        <label>Type:</label>
+        <select name="type">
+            <option value="">Any</option>
+            <option value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+        </select>
+        <br>
+        <label>Breed:</label>
+        <select name="breed">
+            <option value="">Any</option>
+            <option value="Pomeranian">Pomeranian</option>
+            <option value="Persian">Persian</option>
+            <option value="Labrador">Labrador</option>
+        </select>
+        <br>
+        <label>Age:</label>
+        <select name="age">
+            <option value="">Any</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br>
+        <button type="submit">Search 🐶🐱</button>
+    </form>
+
+</body>
+</html>

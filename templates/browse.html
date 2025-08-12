@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browse Pets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffcccc, #ccffff);
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .pet-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .pet-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+        }
+        .pet-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        button {
+            background-color: #ff5c8a;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>🐶 Available Pets for Adoption 🐱</h1>
+    <div class="pet-list">
+        {% for pet in pets %}
+        <div class="pet-card">
+            <img src="{{ pet.image }}" alt="{{ pet.name }}">
+            <h2>{{ pet.name }}</h2>
+            <p><b>Type:</b> {{ pet.type }}</p>
+            <p><b>Breed:</b> {{ pet.breed }}</p>
+            <p><b>Age:</b> {{ pet.age }}</p>
+            <p><b>Status:</b> {{ pet.status }}</p>
+            <p>{{ pet.about }}</p>
+            <form action="{{ url_for('adopt', pet_id=pet._id) }}" method="get">
+                <button type="submit" {% if pet.status == "Adopted" %}disabled{% endif %}>Adopt</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
